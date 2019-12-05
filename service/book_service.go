@@ -53,7 +53,6 @@ func (b bookService) Get(id uint) (result models.Result) {
 		result.Msg = "SUCCESS"
 		return
 	}
-
 	book, err := b.repoB.Get(id)
 	str, _ := json.Marshal(book)
 	cache.Set("tian", string(str), 600)
