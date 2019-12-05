@@ -1,0 +1,20 @@
+{
+  "LoggerLevel": "debug",
+  "DBDebug": true,
+  "DBUserName": "root",
+  "DBPassword": "xxxx",
+  "DBIp": "xxxx",
+  "DBPort": 3306,
+  "DBName": "test",
+  "DBMaxIdle": 1,
+  "DBMaxOpen": 2,
+  "DBMaxLifetime": 20,
+  "RedisIp":  "xxx",
+  "RedisPort": 6379,
+  "RedisDB":  0,
+  "RedisPassword": "",
+  "RedisMaxIdle":  5,
+  "RedisMaxOpen": 10,
+  "RedisMaxLifetime": 20,
+  "ConsumerNum": 1
+}
