@@ -8,12 +8,38 @@
 * 加了mod方式解决依赖
 
 ```
-#适用于使用supervisor保活
-go run main.go --port=8084 --path=/Data/www/Go/src/iris-structure/config.json
-
+// 运行
+go run main.go --port=8081 --path=/data/www/Go/src/iris-structure/config.json
+// 编译
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
-
-nohup /data/www/main --port=8084 --path=/Data/www/Go/src/iris-structure/config.json  >> /data/logs/main_8085.log 2>&1 &
 ```
+
+### 部署方式
+
+参考：[https://beego.me/docs/deploy/beego.md](https://beego.me/docs/deploy/beego.md)
+
+* 独立部署
+
+``
+nohup /data/www/main --port=8081 --path=config.json  >> /data/logs/main_8081.log 2>&1 &
+``
+
+* Supervisor部署
+
+```
+directory=/data/www/Go/src/iris-structure
+command=/data/www/main --port=8081 --path=config.json
+numprocs=1
+autostart=true
+autorestart=true
+startretries=3
+user=www
+redirect_stderr=true
+stdout_logfile=/data/logs/supervisor_xxx_8081.log
+```
+
+* Nginx负载均衡
+...
+
 ### 源于
 [pppercyWang](https://github.com/pppercyWang/iris-gorm-demo)
