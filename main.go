@@ -4,7 +4,6 @@ import (
 	"flag"
 	"github.com/birjemin/iris-structure/command"
 	"github.com/birjemin/iris-structure/conf"
-	"github.com/birjemin/iris-structure/datasource"
 	"github.com/birjemin/iris-structure/utils"
 	"github.com/birjemin/iris-structure/web/route"
 	"github.com/iris-contrib/middleware/cors"
@@ -14,14 +13,8 @@ import (
 )
 
 func main() {
-	var path = flag.String("path", "config.json", "path flag")
 	var port = flag.String("port", "8081", "port flag")
 	flag.Parse()
-
-	// init
-	conf.InitConfig(*path)
-	datasource.InitDb()
-	datasource.InitRedis()
 
 	// set level
 	golog.SetLevel(conf.Sysconfig.LoggerLevel)

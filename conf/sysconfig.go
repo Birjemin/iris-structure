@@ -8,9 +8,9 @@ import (
 
 var Sysconfig = &sysconfig{}
 
-func InitConfig(path string) {
+func init() {
 	//指定对应的json配置文件
-	b, err := ioutil.ReadFile(path)
+	b, err := ioutil.ReadFile("./config.json")
 	if err != nil {
 		panic("Sys config read err")
 	}

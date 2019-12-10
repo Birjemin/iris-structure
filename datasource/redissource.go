@@ -28,7 +28,7 @@ func CloseRedis() error {
 }
 
 // 初始化redis
-func InitRedis() {
+func init() {
 	redisPool = &redis.Pool{
 		MaxIdle:     conf.Sysconfig.RedisMaxIdle,
 		MaxActive:   conf.Sysconfig.RedisMaxOpen,

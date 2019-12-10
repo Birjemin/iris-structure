@@ -25,7 +25,7 @@ func CloseDb() error {
 	return db.DB().Close()
 }
 
-func InitDb() {
+func init() {
 	path := fmt.Sprintf("%s:%s@(%s:%d)/%s?charset=utf8&parseTime=true",
 		conf.Sysconfig.DBUserName,
 		conf.Sysconfig.DBPassword,
