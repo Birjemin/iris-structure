@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"fmt"
 	"github.com/birjemin/iris-structure/conf"
-	"github.com/birjemin/iris-structure/models"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	"time"
@@ -46,9 +45,10 @@ func InitDb() {
 	db.SingularTable(true)                            // 表生成结尾不带s
 	// 是否启用Logger，显示详细日志
 	db.LogMode(conf.Sysconfig.DBDebug)
-	if !db.HasTable(&models.Book{}) { //db.Set 设置一些额外的表属性
-		if err := db.Set("gorm:table_options", "ENGINE=InnoDB DEFAULT CHARSET=utf8").CreateTable(&models.Book{}).Error; err != nil {
-			panic(err)
-		}
-	}
+	// 先注释掉
+	//if !db.HasTable(&models.Book{}) { //db.Set 设置一些额外的表属性
+	//	if err := db.Set("gorm:table_options", "ENGINE=InnoDB DEFAULT CHARSET=utf8").CreateTable(&models.Book{}).Error; err != nil {
+	//		panic(err)
+	//	}
+	//}
 }
