@@ -49,11 +49,13 @@ func main() {
 	//
 	// iris.WithoutServerError(iris.ErrServerClosed): WithoutServerError will cause to ignore the matched "errors"
 	// from the main application's `Run` function.
+
 	_ = app.Run(iris.Addr(":"+(*port)), iris.WithoutInterruptHandler)
 }
 
 func newApp() *iris.Application {
-	app := iris.New()
+	// recovers on panics and logs the incoming http requests.
+	app := iris.Default()
 
 	// optimization
 	app.Configure(iris.WithOptimizations)
@@ -65,7 +67,6 @@ func newApp() *iris.Application {
 		AllowedHeaders:   []string{"*"},
 	})
 	app.Use(crs)
-
 	app.AllowMethods(iris.MethodOptions)
 	return app
 }
