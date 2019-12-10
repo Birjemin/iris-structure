@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/birjemin/iris-structure/models"
-	"github.com/birjemin/iris-structure/service"
+	"github.com/birjemin/iris-structure/services"
 	"github.com/kataras/iris/v12"
 	"github.com/spf13/cast"
 	"time"
@@ -10,11 +10,11 @@ import (
 
 type BookController struct {
 	Ctx     iris.Context
-	Service service.IBookService
+	Service services.IBookService
 }
 
 func NewBookController() *BookController {
-	return &BookController{Service: service.NewBookService()}
+	return &BookController{Service: services.NewBookService()}
 }
 
 //GET http://localhost:8081/api/v1/book?page=1&size=10

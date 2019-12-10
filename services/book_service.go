@@ -1,10 +1,10 @@
-package service
+package services
 
 import (
 	"encoding/json"
 	"github.com/birjemin/iris-structure/cache"
 	"github.com/birjemin/iris-structure/models"
-	"github.com/birjemin/iris-structure/repo"
+	"github.com/birjemin/iris-structure/repos"
 )
 
 type IBookService interface {
@@ -15,11 +15,11 @@ type IBookService interface {
 }
 
 type bookService struct {
-	repoB repo.IBookRepository
+	repoB repos.IBookRepository
 }
 
 func NewBookService() IBookService {
-	return &bookService{repoB: repo.NewBookRepository()}
+	return &bookService{repoB: repos.NewBookRepository()}
 }
 
 func (b bookService) List(m map[string]interface{}) (result models.Result) {

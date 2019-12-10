@@ -1,4 +1,4 @@
-package repo
+package repos
 
 import (
 	"github.com/birjemin/iris-structure/datasource"

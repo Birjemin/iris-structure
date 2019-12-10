@@ -5,7 +5,7 @@ import (
 	"github.com/birjemin/iris-structure/command"
 	"github.com/birjemin/iris-structure/conf"
 	"github.com/birjemin/iris-structure/utils"
-	"github.com/birjemin/iris-structure/web/route"
+	"github.com/birjemin/iris-structure/web/routes"
 	"github.com/iris-contrib/middleware/cors"
 	"github.com/kataras/golog"
 	"github.com/kataras/iris/v12"
@@ -21,7 +21,7 @@ func main() {
 
 	app := newApp()
 	// route
-	route.InitRouter(app)
+	routes.InitRouter(app)
 
 	// 启动一个协程
 	// 全局退出变量

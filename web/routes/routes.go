@@ -1,8 +1,8 @@
-package route
+package routes
 
 import (
 	"github.com/birjemin/iris-structure/web/controllers"
-	middleware "github.com/birjemin/iris-structure/web/middlweare"
+	middleware "github.com/birjemin/iris-structure/web/middlware"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/mvc"
 )
