@@ -43,13 +43,13 @@ func main() {
 
 	// 启动一个常驻协程，来优雅的关闭
 	go utils.GracefulShutdown(app, &WgConsumerExit, &ConsumerExitSignal)
+
 	// Note:
 	// WithoutInterruptHandler:Disable the default behavior with the option `WithoutInterruptHandler`
 	// and register a new interrupt handler (globally, across all possible hosts).
 	//
 	// iris.WithoutServerError(iris.ErrServerClosed): WithoutServerError will cause to ignore the matched "errors"
 	// from the main application's `Run` function.
-
 	_ = app.Run(iris.Addr(":"+(*port)), iris.WithoutInterruptHandler)
 }
 
