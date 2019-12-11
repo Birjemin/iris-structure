@@ -22,7 +22,7 @@ func (c *ClientController) Get() (result models.Result) {
 	name := r.FormValue("name")
 	// Contact the server and print out its response.
 	client := pb.NewGreeterClient(datasource.GetGRPC())
-	res, err := client.SayHello(c.Ctx.Request().Context(), &pb.HelloRequest{Name: name})
+	res, err := client.SayHello(r.Context(), &pb.HelloRequest{Name: name})
 	if err != nil {
 		result.Msg = "错误"
 		result.Code = -1
