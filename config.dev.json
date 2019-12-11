@@ -1,5 +1,6 @@
 {
   "LoggerLevel": "debug",
+  "GRPCServer": "localhost:50051",
   "DBDebug": true,
   "DBUserName": "root",
   "DBPassword": "xxxx",

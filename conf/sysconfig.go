@@ -22,6 +22,7 @@ func init() {
 
 type sysconfig struct {
 	LoggerLevel string `json:"LoggerLevel"`
+	GRPCServer  string        `json:"GRPCServer"`
 	// mysql
 	DBDebug       bool          `json:"DBDebug"`
 	DBUserName    string        `json:"DBUserName"`

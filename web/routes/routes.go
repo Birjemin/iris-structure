@@ -9,4 +9,6 @@ import (
 
 func InitRouter(app *iris.Application) {
 	mvc.New(app.Party("/api/v1/book", middleware.Handler)).Handle(controllers.NewBookController())
+
+	mvc.New(app.Party("/hello")).Handle(controllers.NewClientController())
 }
