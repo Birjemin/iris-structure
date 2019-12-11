@@ -14,6 +14,20 @@ go run main.go --port=8081
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
 ```
 
+
+### GRPC
+查看`grpc/server.go`和`client_controller.go`文件
+
+```
+brew install protobuf
+protoc --version
+protoc -I . --go_out=plugins=grpc:. grpc/pb/hello.proto
+```
+
+```
+go run grpc/server.go
+```
+
 ### 部署方式
 
 参考：[https://beego.me/docs/deploy/beego.md](https://beego.me/docs/deploy/beego.md)
