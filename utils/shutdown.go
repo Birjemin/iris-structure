@@ -44,7 +44,8 @@ func GracefulShutdown(app *iris.Application, wgc *sync.WaitGroup, exitSignal *bo
 		golog.Error("[main]DB Pool Exited...", err)
 		err = datasource.CloseRedis()
 		golog.Error("[main]Redis Pool Exited...", err)
-
+		err = datasource.CloseGRPC()
+		golog.Error("[main]GRPC Exited...", err)
 		golog.Error("[main]Iris shutdown...")
 		golog.Error("[main]Defer, Pool Redis and Db Stats", datasource.StatsRedis(), datasource.StatsDB())
 
