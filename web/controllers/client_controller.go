@@ -16,7 +16,7 @@ func NewClientController() *ClientController {
 	return &ClientController{}
 }
 
-//GET http://localhost:8081/api/v1/book?page=1&size=10
+//GET http://localhost:8081/hello?name=ahh
 func (c *ClientController) Get() (result models.Result) {
 	r := c.Ctx.Request()
 	name := r.FormValue("name")
