@@ -1,6 +1,6 @@
-syntax = "proto3"; // 指定 proto 版本
+syntax = "proto3"; // proto version
 
-package hello;     // 指定包名
+package hello;     // package name
 
 // The greeting service definition.
 service Greeter {
